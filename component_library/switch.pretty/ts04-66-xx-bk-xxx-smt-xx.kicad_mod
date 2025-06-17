@@ -1,0 +1,227 @@
+(footprint "ts04-66-xx-bk-xxx-smt-xx"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -4 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "cb64944e-c0c5-4bd6-96a4-b881702ce7df")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "ts04-66-xx-bk-xxx-smt-xx"
+		(at 0 4 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "51d51612-f1a0-4662-8701-f1f3e2d41796")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.cuidevices.com/product/resource/ts04.pdf"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5c3a69b4-e558-4774-b83c-8e07147b6ee2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "204fa681-a5de-4f11-918a-8a23d0ace365")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5b534e6c-f78d-4616-b2d5-bf26f769eb39")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Manufacturer Part Number" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0692adf8-c0c4-4c5b-9521-86c3bf63f8bb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(attr smd)
+	(fp_rect
+		(start -3.1 -3.1)
+		(end 3.1 3.1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "12860e63-9f74-4ea7-844d-149b2fb0534c")
+	)
+	(fp_poly
+		(pts
+			(xy -5.75 -3.25) (xy -5.75 -1.25) (xy -3.25 -1.25) (xy -3.25 1.25) (xy -5.75 1.25) (xy -5.75 3.25)
+			(xy 5.75 3.25) (xy 5.75 1.25) (xy 3.25 1.25) (xy 3.25 -1.25) (xy 5.75 -1.25) (xy 5.75 -3.25)
+		)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "58e06d3b-2348-4d0c-8078-039d014f96c8")
+	)
+	(fp_rect
+		(start -5 -2.6)
+		(end -3 -1.9)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "2d116723-5b22-426c-82b9-6345db1c537a")
+	)
+	(fp_rect
+		(start -5 1.9)
+		(end -3 2.6)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "139b8b66-01d2-4c1f-8b20-630158839283")
+	)
+	(fp_rect
+		(start -3 -3)
+		(end 3 3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "64d765cc-7bc0-4136-b3f2-56503e536fab")
+	)
+	(fp_rect
+		(start 3 -2.6)
+		(end 5 -1.9)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "19061ba9-0934-4f0f-9419-0b1421e1208f")
+	)
+	(fp_rect
+		(start 3 1.9)
+		(end 5 2.6)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "a01560c0-16d0-4cdf-8848-caa82bd17bed")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 1.75 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "273e7e81-f7f0-4750-b82e-54b294091ac0")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "bfa6571a-5c64-4c9a-825b-893c46eaeaf5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -4.55 -2.25)
+		(size 2.1 1.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.15)
+		(thermal_bridge_angle 45)
+		(uuid "523a8631-bf24-42a7-b4b5-8cc401e03bd3")
+	)
+	(pad "1" smd roundrect
+		(at 4.55 -2.25)
+		(size 2.1 1.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.15)
+		(thermal_bridge_angle 45)
+		(uuid "f7f1adef-e180-4edd-8f99-b02eff25ed12")
+	)
+	(pad "2" smd roundrect
+		(at -4.55 2.25)
+		(size 2.1 1.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.15)
+		(thermal_bridge_angle 45)
+		(uuid "254176ab-b428-44d5-8d44-e2f371b450df")
+	)
+	(pad "2" smd roundrect
+		(at 4.55 2.25)
+		(size 2.1 1.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.15)
+		(thermal_bridge_angle 45)
+		(uuid "53734ae7-ef20-4dc5-bc68-cdbee4dd7a67")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/component_library/model_3d/switch/Same_Sky_TS04-66-55-BK-100-SMT.step"
+		(offset
+			(xyz 0 0 0.1)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 -0)
+		)
+	)
+)

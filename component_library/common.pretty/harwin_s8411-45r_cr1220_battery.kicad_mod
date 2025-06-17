@@ -1,0 +1,170 @@
+(footprint "harwin_s8411-45r_cr1220_battery"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 4 -8 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "5e91f24c-4a87-42f3-aea0-ebff32bd4a34")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "harwin_s8411-45r_cr1220"
+		(at 0 11.43 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "870aa1c1-f8f7-4473-abb4-090a0072e67c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "fd1fb729-baad-4435-8cf2-7fc9ac358768")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a75441be-c14f-44f5-83d6-d109a1e2da21")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "Harwin"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d6603a91-988e-49bc-b02a-1c95c346bac4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer Part Number" "S8411-45R"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e83f76a7-aca7-44e9-8962-2acead017b39")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_poly
+		(pts
+			(xy 7.62 0) (xy 6.858 8.128) (xy 3.81 8.128) (xy 1.27 8.636) (xy 1.15 10.45) (xy -1.15 10.45) (xy -1.27 8.636)
+			(xy -3.81 8.128) (xy -6.858 8.128) (xy -7.62 0) (xy -7.112 -2.794) (xy -5.846804 -4.886643) (xy -4.318 -6.35)
+			(xy -2.794 -7.112) (xy -1.352473 -7.499014) (xy -1.15 -10.45) (xy 1.15 -10.45) (xy 1.352473 -7.499014)
+			(xy 2.794 -7.112) (xy 4.318 -6.35) (xy 5.846804 -4.886643) (xy 7.112 -2.794)
+		)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "cb8ad995-7c10-4ee3-aee6-74f0bc98e525")
+	)
+	(fp_rect
+		(start -6.6 5.95)
+		(end 6.6 7.85)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "953e7184-fdbb-4faa-a53f-3aa1eeb1518f")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 7.4 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "d9ec7086-0ff5-4a04-831c-61195de80271")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "2c2b43f4-303c-4921-b39c-9b87f242723a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" np_thru_hole circle
+		(at 0 -3.5)
+		(size 1.05 1.05)
+		(drill 1.05)
+		(layers "F&B.Cu" "*.Mask")
+		(uuid "e4e9afb9-0feb-48a1-b626-6109768a4be7")
+	)
+	(pad "" np_thru_hole circle
+		(at 0 3.95)
+		(size 1.3 1.3)
+		(drill 1.3)
+		(layers "F&B.Cu" "*.Mask")
+		(uuid "de4b2eb0-24db-414e-bed7-631ca329a87c")
+	)
+	(pad "1" smd roundrect
+		(at 0 -8.2)
+		(size 2.3 4.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "51665c6f-fa8e-41de-a1cf-d31c8a0e9ad9")
+	)
+	(pad "2" smd roundrect
+		(at 0 8.2)
+		(size 2.3 4.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "0dd911e8-85cb-486c-886c-800b408eea72")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/component_library/model_3d/common/S8411-45R.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 0 0)
+		)
+	)
+)

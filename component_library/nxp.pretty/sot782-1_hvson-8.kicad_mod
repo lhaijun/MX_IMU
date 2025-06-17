@@ -1,0 +1,228 @@
+(footprint "sot782-1_hvson-8"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "NXP SOT782-1 specification (based on SON-8, HVSON-8)")
+	(tags "SOT HVSON SON")
+	(property "Reference" "REF**"
+		(at 0 -2.5 0)
+		(layer "F.SilkS")
+		(uuid "ba9b6a88-f835-4f85-a9ab-2c58bf112461")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "sot782-1_hvson-8"
+		(at 0 2.5 0)
+		(layer "F.Fab")
+		(uuid "fb58bd24-9620-492f-964c-e08bf5491ea1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.nxp.com/docs/en/package-information/SOT782-1.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7c7aeb0b-124b-4aa0-b730-4d7480d1be3f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1796bc93-0c07-4f2b-82c8-28b67bcc6ec7")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c5010848-9ecc-47b5-95f9-4ee123a122c5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer Part Number" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "77bbf44d-db8e-4a3a-9849-fc3274947a26")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -1.5 -1.61)
+		(end 1.5 -1.61)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c48c987e-e573-4e81-b833-efe914d58d1d")
+	)
+	(fp_line
+		(start -1.5 1.61)
+		(end 1.5 1.61)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "06340c22-1a06-4f1d-9d3a-07de388d8eab")
+	)
+	(fp_poly
+		(pts
+			(xy -1.79 -1.29) (xy -2.27 -1.29) (xy -1.79 -1.77)
+		)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "60484b34-d5cf-4717-a56b-bd8233c07b94")
+	)
+	(fp_rect
+		(start -1.75 -1.625)
+		(end 1.75 1.625)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "ef9956cf-da85-4bb1-9c64-a856d5e8a6ad")
+	)
+	(fp_poly
+		(pts
+			(xy -1.5 -0.75) (xy -1.5 1.5) (xy 1.5 1.5) (xy 1.5 -1.5) (xy -0.75 -1.5)
+		)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "c50039cc-ffb6-40f9-ada5-a0ad2c7e77d3")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "0f70fdcf-a751-4b7c-ab60-738b77c7ff1c")
+		(effects
+			(font
+				(size 0.98 0.98)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" smd roundrect
+		(at 0 0)
+		(size 0.65 1.1)
+		(layers "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "bd9dd0d6-e5d1-40bc-a992-fc08317c029a")
+	)
+	(pad "1" smd roundrect
+		(at -1.3625 -0.975)
+		(size 0.525 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "4df21045-d21b-4ed3-9d97-ff177323aaf0")
+	)
+	(pad "2" smd roundrect
+		(at -1.3625 -0.325)
+		(size 0.525 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "c5ea820a-ae68-4a50-b845-863975e7936c")
+	)
+	(pad "3" smd roundrect
+		(at -1.3625 0.325)
+		(size 0.525 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "81c1ea37-ad50-4485-94b0-fd097e8aae4f")
+	)
+	(pad "4" smd roundrect
+		(at -1.3625 0.975)
+		(size 0.525 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "762b6c0b-815a-4563-bd56-a590000ffa82")
+	)
+	(pad "5" smd roundrect
+		(at 1.3625 0.975)
+		(size 0.525 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "bc70f211-f193-4c50-940d-d1fd505374a8")
+	)
+	(pad "6" smd roundrect
+		(at 1.3625 0.325)
+		(size 0.525 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "f448ec67-eb92-4cdd-b067-4f4709ae5e18")
+	)
+	(pad "7" smd roundrect
+		(at 1.3625 -0.325)
+		(size 0.525 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "36107074-b8fd-40c9-b5ae-ad6553bc67a7")
+	)
+	(pad "8" smd roundrect
+		(at 1.3625 -0.975)
+		(size 0.525 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "5df7331d-dbb0-4e75-9c61-5cec197afccc")
+	)
+	(pad "9" smd rect
+		(at 0 0)
+		(size 1.65 2.45)
+		(property pad_prop_heatsink)
+		(layers "F.Cu" "F.Mask")
+		(zone_connect 2)
+		(uuid "a4b33474-981a-4925-abeb-6cb555129a83")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/component_library/model_3d/nxp/SOT782-1 HVSON-8.stp"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
