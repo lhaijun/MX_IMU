@@ -4384,12 +4384,6 @@
 		(uuid "ecd9bce1-07b1-4a0f-845c-d5ca9142667e")
 	)
 	(junction
-		(at 151.13 152.4)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f7de28a7-8ef8-4803-91c2-622fe683827b")
-	)
-	(junction
 		(at 69.85 25.4)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5257,7 +5251,7 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 152.4) (xy 152.4 152.4)
+			(xy 147.32 152.4) (xy 152.4 152.4)
 		)
 		(stroke
 			(width 0)
@@ -5824,16 +5818,6 @@
 			(type dash)
 		)
 		(uuid "f0608af4-4c23-475a-9413-c89749ce8ddb")
-	)
-	(wire
-		(pts
-			(xy 147.32 152.4) (xy 151.13 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f106ae5e-efe1-47c8-b20d-6c315c3c6d09")
 	)
 	(wire
 		(pts
@@ -8391,12 +8375,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor, small symbol"
 			(at 165.1 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC Part #" "C25118"
@@ -9038,6 +9023,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -10639,73 +10625,6 @@
 			(project "MX_IMU"
 				(path "/8ed38441-7d4e-4e89-870f-07e11c6dce38"
 					(reference "#PWR026")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 151.13 152.4 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d7ea8c10-c5d7-4a60-b069-eaf306d72bf3")
-		(property "Reference" "#FLG03"
-			(at 151.13 154.305 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 151.13 156.972 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 151.13 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 151.13 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 151.13 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "449b7eec-bddd-4afb-b46f-f082e44c3585")
-		)
-		(instances
-			(project ""
-				(path "/8ed38441-7d4e-4e89-870f-07e11c6dce38"
-					(reference "#FLG03")
 					(unit 1)
 				)
 			)
