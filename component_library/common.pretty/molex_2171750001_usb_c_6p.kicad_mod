@@ -77,7 +77,7 @@
 			)
 		)
 	)
-	(attr smd)
+	(attr through_hole)
 	(fp_line
 		(start -4.67 -0.25)
 		(end -4.67 -1.95)
