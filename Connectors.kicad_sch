@@ -4377,15 +4377,16 @@
 				)
 			)
 		)
-		(property "Value" "SWD"
+		(property "Value" "B3U-3000P-B"
 			(at 50.8 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD"
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical"
 			(at 49.53 128.27 0)
 			(effects
 				(font
@@ -5658,7 +5659,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 83.312 74.93 90)
 			(effects
 				(font
@@ -5855,16 +5856,17 @@
 				(justify right)
 			)
 		)
-		(property "Value" "CAN"
+		(property "Value" "KH-1.27PH180-1X4P-L7.2"
 			(at 144.78 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical_SMD_Pin1Right"
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
 			(at 143.51 67.31 0)
 			(effects
 				(font
@@ -6205,7 +6207,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 93.472 74.93 90)
 			(effects
 				(font
@@ -6800,16 +6802,17 @@
 				(justify right)
 			)
 		)
-		(property "Value" "USART"
+		(property "Value" "KH-1.27PH180-1X4P-L7.2"
 			(at 144.78 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical_SMD_Pin1Right"
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
 			(at 143.51 54.61 0)
 			(effects
 				(font
