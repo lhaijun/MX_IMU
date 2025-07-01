@@ -4517,6 +4517,10 @@
 		(uuid "41f822ad-1d9b-42e9-842e-6bd85029c313")
 	)
 	(no_connect
+		(at 104.14 114.3)
+		(uuid "4771be6e-1a78-469c-b5a4-1873082a531a")
+	)
+	(no_connect
 		(at 60.96 111.76)
 		(uuid "4f2d0bf6-d985-43de-94d4-fdf52245c8e0")
 	)
@@ -5974,26 +5978,6 @@
 		(uuid "02cc46a0-5281-4ccb-86e8-68cb466af72a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 165.1 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "SWO"
-		(shape input)
-		(at 104.14 114.3 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "10f7403a-ba3f-4a86-99c4-6aeed248b546")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 104.14 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)

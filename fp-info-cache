@@ -1,4 +1,4 @@
-25861608170077607
+25868612223867394
 A_DF_09_A_KG_T2S
 ASSMANN_A-DF_09_A_KG-T2S
 
@@ -2680,6 +2680,13 @@ speaker CUI
 0
 2
 2
+CONN-HEADER-VERT-5POS-2.54MM
+CONN-HEADER-VERT-5POS-2.54MM
+
+
+0
+5
+5
 Calibration_Scale
 Gauge_10mm_Type1_CopperTop
 Gauge, Massstab, 10mm, CopperTop, Type 1,
@@ -103676,6 +103683,27 @@ bf080-20-a-1-l-c_holes
 0
 20
 20
+header_RA_5pos_254
+CONN_70553-xxxx_05_MOL
+
+705530039 
+0
+5
+5
+header_RA_5pos_254
+CONN_SDA-70543-xxxx_05_MOL
+
+705430004 
+0
+5
+5
+header_VERT_5pos_254
+CONN_SDA-70543-xxxx_05_MOL
+
+705430004 
+0
+5
+5
 logo
 logo
 
