@@ -1,0 +1,9 @@
+../Core/Src/i2c_driver.c:21:12:stm32_i2c1_read_callback	32	static
+../Core/Src/i2c_driver.c:25:12:stm32_i2c1_write_callback	32	static
+../Core/Src/i2c_driver.c:29:12:stm32_i2c2_read_callback	32	static
+../Core/Src/i2c_driver.c:33:12:stm32_i2c2_write_callback	32	static
+../Core/Src/i2c_driver.c:37:5:i2c_driver_init	24	static
+../Core/Src/i2c_driver.c:53:5:i2c_driver_init_i2c1	16	static
+../Core/Src/i2c_driver.c:58:5:i2c_driver_init_i2c2	16	static
+../Core/Src/i2c_driver.c:63:5:i2c_read_wrapper	40	static
+../Core/Src/i2c_driver.c:71:5:i2c_write_wrapper	24	static

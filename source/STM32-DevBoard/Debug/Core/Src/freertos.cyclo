@@ -1,0 +1,2 @@
+../Core/Src/freertos.c:60:6:vApplicationIdleHook	1
+../Core/Src/freertos.c:75:6:vApplicationTickHook	1

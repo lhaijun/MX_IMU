@@ -1,0 +1,14 @@
+../Core/Src/icm42688p.c:6:9:hal_Spi1_ReadWriteByte	32	static
+../Core/Src/icm42688p.c:12:6:Icm_Spi_ReadWriteNbytes	24	static
+../Core/Src/icm42688p.c:22:9:ICM42688P_ReadReg	24	static
+../Core/Src/icm42688p.c:35:6:ICM42688P_ReadRegs	16	static
+../Core/Src/icm42688p.c:45:9:ICM42688P_WriteReg	16	static
+../Core/Src/icm42688p.c:66:7:ICM42688P_ConvertAccel	16	static
+../Core/Src/icm42688p.c:80:7:ICM42688P_ConvertGyro	16	static
+../Core/Src/icm42688p.c:92:7:ICM42688P_ConvertTemp	16	static
+../Core/Src/icm42688p.c:100:6:ICM42688P_Init	16	static
+../Core/Src/icm42688p.c:166:6:ICM42688P_Read_FIFO_DMA	16	static
+../Core/Src/icm42688p.c:179:19:icm_read_dma	16	static
+../Core/Src/icm42688p.c:194:6:icm_read_fifo	16	static
+../Core/Src/icm42688p.c:205:6:ICM42688P_ReadData	24	static
+../Core/Src/icm42688p.c:216:5:icm42688_read_all	32	static

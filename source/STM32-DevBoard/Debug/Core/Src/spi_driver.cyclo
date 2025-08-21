@@ -1,0 +1,4 @@
+../Core/Src/spi_driver.c:15:6:spi_cs_enable	1
+../Core/Src/spi_driver.c:19:6:spi_cs_disable	1
+../Core/Src/spi_driver.c:23:5:spi_read_wrapper	3
+../Core/Src/spi_driver.c:41:5:spi_write_wrapper	3
