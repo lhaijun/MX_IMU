@@ -23,12 +23,22 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "icm42688p.h"
-#include <mavlink/standard/mavlink.h>
+#include <common/mavlink.h>
+#include "Fusion.h"
+#include "time.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+	// Define calibration (replace with actual calibration data if available)
+	    const FusionMatrix gyroscopeMisalignment = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+	    const FusionVector gyroscopeSensitivity = {1.0f, 1.0f, 1.0f};
+	    const FusionVector gyroscopeOffset = {0.0f, 0.0f, 0.0f};
+	    const FusionMatrix accelerometerMisalignment = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+	    const FusionVector accelerometerSensitivity = {1.0f, 1.0f, 1.0f};
+	    const FusionVector accelerometerOffset = {0.0f, 0.0f, 0.0f};
+	    const FusionMatrix softIronMatrix = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+	    const FusionVector hardIronOffset = {0.0f, 0.0f, 0.0f};
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -37,8 +47,20 @@ ICM42688P_Data_t imudata;
 #define IMU_DATA_SIZE 20 // 更新为 20 // Updated to 20
 uint8_t imu_data_buffer[2][IMU_DATA_SIZE];
 volatile uint8_t current_buffer_index = 0;
+#define SAMPLE_RATE (100) // replace this with actual sample rate
 
+// Initialise algorithms
+FusionOffset offset;
+FusionAhrs ahrs;
+FusionEuler euler;
 
+void GetPose(void);
+
+/* USER CODE BEGIN PV */
+uint8_t tx_data[] = "Hello from STM32 via DMA!\r\n";
+uint8_t mavlink_tx_buffer[MAVLINK_MAX_PACKET_LEN];
+
+/* USER CODE END PV */
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -64,7 +86,7 @@ DMA_HandleTypeDef hdma_usart2_tx;
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
-  .stack_size = 128 * 4,
+  .stack_size = 2048,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for imu_acquisition */
@@ -163,6 +185,21 @@ int main(void)
   // Initialize ICM42688P driver
   // 初始化ICM42688P驱动
   ICM42688P_Init();
+
+
+  FusionOffsetInitialise(&offset, SAMPLE_RATE);
+  FusionAhrsInitialise(&ahrs);
+
+  // Set AHRS algorithm settings
+  const FusionAhrsSettings settings = {
+          .convention = FusionConventionNwu,
+          .gain = 0.5f,
+          .gyroscopeRange = 2000.0f, /* replace this with actual gyroscope range in degrees/s */
+          .accelerationRejection = 10.0f,
+          .magneticRejection = 10.0f,
+          .recoveryTriggerPeriod = 5 * SAMPLE_RATE, /* 5 seconds */
+  };
+  FusionAhrsSetSettings(&ahrs, &settings);
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -352,7 +389,7 @@ static void MX_TIM1_Init(void)
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 167;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 999;
+  htim1.Init.Period = 9999;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
@@ -591,6 +628,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	//ICM42688P_Read_FIFO_DMA();
 
 	  icm42688_read_all(&imudata);
+	  GetPose();
 	  //HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_4);
   }
 
@@ -611,6 +649,52 @@ void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi) {
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */
+void mavlink_send_heartbeat(void) {
+    mavlink_message_t msg;
+    mavlink_heartbeat_t heartbeat;
+
+    heartbeat.type = MAV_TYPE_QUADROTOR;
+    heartbeat.autopilot = MAV_AUTOPILOT_ARDUPILOTMEGA;
+    heartbeat.base_mode = MAV_MODE_FLAG_CUSTOM_MODE_ENABLED;
+    heartbeat.custom_mode = 0;
+    heartbeat.system_status = MAV_STATE_ACTIVE;
+    heartbeat.mavlink_version = 3;
+
+    mavlink_msg_heartbeat_encode(1, 1, &msg, &heartbeat);
+
+    uint16_t len = mavlink_msg_to_send_buffer(mavlink_tx_buffer, &msg);
+    HAL_UART_Transmit(&huart2, mavlink_tx_buffer, len, HAL_MAX_DELAY);
+}
+void SendToPC(void){
+	 //HAL_UART_Transmit_DMA(&huart2, tx_data, sizeof(tx_data) - 1);
+    // 定义 Mavlink 消息和状态
+    mavlink_message_t msg;
+    uint16_t len;
+
+    // 创建一个 Attitude 消息
+    mavlink_attitude_t attitude;
+
+    // 填充消息字段
+    attitude.time_boot_ms = HAL_GetTick(); // 使用 HAL 库获取系统启动时间（毫秒）
+    attitude.roll = euler.angle.roll;                   // 滚转角（弧度）
+    attitude.pitch = euler.angle.pitch;                  // 俯仰角（弧度）
+    attitude.yaw = euler.angle.yaw;                    // 偏航角（弧度）
+
+
+    // 将 Attitude 消息打包成 Mavlink 消息
+    // 参数: system_id, component_id, &msg, &attitude
+    mavlink_msg_attitude_encode(1, 1, &msg, &attitude);
+
+    // 将 Mavlink 消息序列化到缓冲区
+    len = mavlink_msg_to_send_buffer(mavlink_tx_buffer, &msg);
+
+    // 使用 HAL_UART_Transmit 发送数据
+    // 假设你使用 USART2，其句柄为 &huart2
+    //HAL_UART_Transmit(&huart2, tx_data, sizeof(tx_data) - 1, HAL_MAX_DELAY);
+
+    HAL_UART_Transmit(&huart2, mavlink_tx_buffer, len, HAL_MAX_DELAY);
+
+}
 /**
   * @brief  Function implementing the defaultTask thread.
   * @param  argument: Not used
@@ -623,8 +707,12 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
+	  //HAL_UART_Transmit_DMA(&huart2, tx_data, sizeof(tx_data) - 1);
+	  mavlink_send_heartbeat();
+      osDelay(10);
+	  SendToPC();
+      osDelay(10);
 
-	      osDelay(10);
   }
   /* USER CODE END 5 */
 }
@@ -650,6 +738,34 @@ void StartIMUTask(void *argument)
 }
 
 /* USER CODE BEGIN Header_StartPose */
+void GetPose(void){
+	preCNT = GetTimeUS_TIM();
+		  // Acquire latest sensor data
+		          const clock_t timestamp = clock(); // replace this with actual gyroscope timestamp
+		          FusionVector gyroscope = {imudata.gyro_x, imudata.gyro_y, imudata.gyro_z}; // replace this with actual gyroscope data in degrees/s
+		          FusionVector accelerometer = {imudata.accel_x, imudata.accel_y, imudata.accel_z}; // replace this with actual accelerometer data in g
+
+		          // Apply calibration
+		          gyroscope = FusionCalibrationInertial(gyroscope, gyroscopeMisalignment, gyroscopeSensitivity, gyroscopeOffset);
+		          accelerometer = FusionCalibrationInertial(accelerometer, accelerometerMisalignment, accelerometerSensitivity, accelerometerOffset);
+
+		          // Update gyroscope offset correction algorithm
+		          gyroscope = FusionOffsetUpdate(&offset, gyroscope);
+
+		          // Calculate delta time (in seconds) to account for gyroscope sample clock error
+		          static clock_t previousTimestamp;
+		          const float deltaTime = (float) (timestamp - previousTimestamp) / (float) CLOCKS_PER_SEC;
+		          previousTimestamp = timestamp;
+
+		          // Update gyroscope AHRS algorithm
+		          FusionAhrsUpdateNoMagnetometer(&ahrs, gyroscope, accelerometer, 0.01);
+
+		          // Print algorithm outputs
+		          euler = FusionQuaternionToEuler(FusionAhrsGetQuaternion(&ahrs));
+
+	        	  delCNT = GetTimeUS_TIM()-preCNT;
+
+}
 /**
 * @brief Function implementing the pose_estimation thread.
 * @param argument: Not used
@@ -659,12 +775,15 @@ void StartIMUTask(void *argument)
 void StartPose(void *argument)
 {
   /* USER CODE BEGIN StartPose */
+
+
+
+
   /* Infinite loop */
   for(;;)
   {
-	  preCNT = GetTimeUS_TIM();
-      osDelay(10);
-	  delCNT = GetTimeUS_TIM()-preCNT;
+	  osDelay(1);
+
   }
   /* USER CODE END StartPose */
 }

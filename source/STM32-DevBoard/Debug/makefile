@@ -15,6 +15,7 @@ RM := rm -rf
 -include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
+-include Core/Src/Fusion/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
 
@@ -64,8 +65,8 @@ all: main-build
 main-build: STM32-DevBoard.elf secondary-outputs
 
 # Tool invocations
-STM32-DevBoard.elf STM32-DevBoard.map: $(OBJS) $(USER_OBJS) C:\GitHub\STM32-DevBoard\source\STM32-DevBoard\STM32F405RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "STM32-DevBoard.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\GitHub\STM32-DevBoard\source\STM32-DevBoard\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32-DevBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32-DevBoard.elf STM32-DevBoard.map: $(OBJS) $(USER_OBJS) C:\GitHub\MX_IMU\source\STM32-DevBoard\STM32F405RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "STM32-DevBoard.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\GitHub\MX_IMU\source\STM32-DevBoard\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32-DevBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

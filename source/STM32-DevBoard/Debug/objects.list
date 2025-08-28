@@ -1,3 +1,6 @@
+"./Core/Src/Fusion/FusionAhrs.o"
+"./Core/Src/Fusion/FusionCompass.o"
+"./Core/Src/Fusion/FusionOffset.o"
 "./Core/Src/freertos.o"
 "./Core/Src/icm42688p.o"
 "./Core/Src/main.o"
